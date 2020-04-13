@@ -1,5 +1,6 @@
-import './App.css';
-import '';
+import '../css/App.css';
+import MemeImages from './MemeImages';
+import MemeSadness from './MemeSadness';
 
 import React from 'react';
 import { Formik } from 'formik';
@@ -28,15 +29,6 @@ class App extends React.Component {
       this.setState({ error: true});
     }
   }
-  clickedImage(e) {
-    console.log(e);
-  }
-  constructImage(value, i) {
-    var url = "https://farm" + value.farm + ".staticflickr.com/" 
-                + value.server + "/" + value.id + "_" + value.secret + ".jpg";
-                console.log(url);
-    return <MemeImage key={"meme-select" + i} className="memeimage-select" i={i} src={url} alt="" onImageClick={this.clickedImage}/>;
-  }
   render() {
     return (
       <div>
@@ -64,19 +56,8 @@ class App extends React.Component {
           </form>
         )}
         </Formik>
-        <div className="memes">
-          {!this.state.error 
-              ? this.state.images.map((value, i) => (this.constructImage(value, i))) 
-              : <div className="no-memes-found-box">
-                  <div className="meme-sadness">
-                    No memes found!
-                  </div>
-                  <div className="helpful-hint">
-                    Maybe try a different query?
-                  </div>
-                </div>
-          }
-        </div>
+
+        {!this.state.error ? <MemeImages images={this.state.images} /> : <MemeSadness />}
       </div>
 
     )
