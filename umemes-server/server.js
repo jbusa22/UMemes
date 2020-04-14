@@ -20,7 +20,8 @@ app.get('/search', async function (req, res) {
   if(query) {
     try {
       photos = await flickr.photos.search({
-        text: `${query}`
+        text: `${query}`,
+        sort: "relevance"
       });
       photos = photos.body.photos.photo;
       res.send(photos);

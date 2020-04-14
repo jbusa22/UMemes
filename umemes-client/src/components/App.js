@@ -1,6 +1,6 @@
 import '../css/App.css';
-import MemeImages from './MemeImages';
-import MemeSadness from './MemeSadness';
+import MemeImages from './MemeImages.js';
+import MemeSadness from './MemeSadness.js';
 
 import React from 'react';
 import { Formik } from 'formik';
