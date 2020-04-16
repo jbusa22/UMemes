@@ -1,9 +1,12 @@
 import '../css/App.css';
 import MemeImages from './MemeImages.js';
 import MemeSadness from './MemeSadness.js';
+import MemeDisplay from './MemeDisplay.js';
+import MemeSearch from './MemeSearch.js';
+import {getImageUrl} from '../shared/functions.js';
 
 import React from 'react';
-import { Formik } from 'formik';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -11,9 +14,21 @@ class App extends React.Component {
     this.state = {
         images: [],
         searching: false,
-        error: false
+        error: false,
+        selectedUrl: "",
+        selectedIndex: null
     };
     this.queryImages = this.queryImages.bind(this);
+    this.selectImage = this.selectImage.bind(this);
+  }
+  selectImage(src) {
+    if(this.state.selectedIndex != null) {
+      var oldImage = document.querySelector(`.memeimage-select:nth-of-type(${1 + this.state.selectedIndex})`);
+      oldImage.classList.remove("selected-image");
+    }
+    this.setState({ selectedIndex: src, selectedUrl: getImageUrl(this.state.images[src])});
+    var newImage = document.querySelector(`.memeimage-select:nth-of-type(${1 + src})`);
+    newImage.classList.add("selected-image");
   }
   async queryImages(query) {
     // GET request using fetch with async/await
@@ -23,41 +38,24 @@ class App extends React.Component {
       if(data && data.length > 0) {
         this.setState({ images: data, error: false});
       } else {
-        this.setState({ error: true});
+        this.setState({error: true, images: [], selectedUrl: "", selectedIndex: null});
       }
-    } catch {
-      this.setState({ error: true});
+    } catch(err) {
+      console.log(err.message);
+      this.setState({ error: true, images: [], selectedUrl: "", selectedIndex: null});
     }
   }
   render() {
     return (
-      <div>
-        <h1>My Form</h1>
-        <Formik
-          initialValues={{ name: '' }}
-          onSubmit={async (values, actions) => {
-            setTimeout(async () => {
-              await this.queryImages(values.name);
-              actions.setSubmitting(false);
-            }, 500);
-          }}
-        >
-        {props => (
-          <form onSubmit={props.handleSubmit}>
-            <input
-              type="text"
-              onChange={props.handleChange}
-              onBlur={props.handleBlur}
-              value={props.values.name}
-              name="name"
-            />
-            {props.errors.name && <div id="feedback">{props.errors.name}</div>}
-            <button type="submit">Submit</button>
-          </form>
-        )}
-        </Formik>
-
-        {!this.state.error ? <MemeImages images={this.state.images} /> : <MemeSadness />}
+      <div className="meme-wrap">
+        <div className="image-editor">
+          <h1>Working</h1>
+          <MemeDisplay src={this.state.selectedUrl}/>
+        </div>
+        <div className="image-gallery">
+          <MemeSearch queryImages={this.queryImages}/>
+          {!this.state.error ? <MemeImages images={this.state.images} selectImage={this.selectImage}/> : <MemeSadness />}
+        </div>
       </div>
 
     )

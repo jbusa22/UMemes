@@ -1,4 +1,5 @@
 var Flickr = require('flickr-sdk');
+var Jimp = require('jimp');
 var express = require('express');
 var app = express();
 require('dotenv').config();
@@ -25,6 +26,18 @@ app.get('/search', async function (req, res) {
       });
       photos = photos.body.photos.photo;
       res.send(photos);
+      // const font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+      // res.type('jpg');
+      // res.attachment('output.jpg');
+      // Jimp.read('lenna.png', (err, lenna) => {
+      //     if (err) throw err; 
+      //     lenna.resize(256, 256) // resize
+      //     .print(font, 10, 10, 'Hello World!')
+      //     .quality(60) // set JPEG quality
+      //     .greyscale() // set greyscale
+      //     .write('output.jpg'); // save
+      // });
+      // res.download("output.jpg");
     } catch(err) { 
       res.send(err.message);
     }

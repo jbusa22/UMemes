@@ -1,6 +1,8 @@
 import React from 'react';
 import MemeImage from './MemeImage';
 import MemeDisplay from './MemeDisplay';
+import '../css/flexbin.css';
+import '../css/images.css';
 import {getImageUrl} from '../shared/functions.js';
 
 
@@ -13,16 +15,15 @@ class MemeImages extends React.Component {
         this.clickedImage = this.clickedImage.bind(this);
     }
     clickedImage(i) {
-        this.setState({ src: getImageUrl(this.props.images[i])});
+        
     }
     render() {
         return (
             <div className="memes">
-                <MemeDisplay src={this.state.src}/>
-                <div className="meme-selection">
+                <div className="meme-selection flexbin">
                     {Array.isArray(this.props.images) && this.props.images.map((value, i) => {
                         return <MemeImage key={"meme-select" + i} className="memeimage-select" i={i} 
-                                src={getImageUrl(value)} onImageClick={this.clickedImage}/>
+                                src={getImageUrl(value)} onImageClick={this.props.selectImage}/>
                     })}
                 </div>
             </div>
