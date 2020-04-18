@@ -12,10 +12,6 @@ class MemeImages extends React.Component {
         this.state = {
             src: ''
         };
-        this.clickedImage = this.clickedImage.bind(this);
-    }
-    clickedImage(i) {
-        
     }
     render() {
         return (

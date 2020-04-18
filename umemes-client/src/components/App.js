@@ -15,7 +15,7 @@ class App extends React.Component {
         images: [],
         searching: false,
         error: false,
-        selectedUrl: "",
+        selectedUrl: "https://farm3.staticflickr.com/2792/4124602734_5a83cc8566.jpg",
         selectedIndex: null
     };
     this.queryImages = this.queryImages.bind(this);
