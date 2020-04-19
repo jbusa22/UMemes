@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
 
-class MemeImage extends React.Component {
+class MemeSearch extends React.Component {
     constructor(props) {
       super(props);
     }
@@ -34,5 +34,5 @@ class MemeImage extends React.Component {
         );
     }
 }
-export default MemeImage;
+export default MemeSearch;
 

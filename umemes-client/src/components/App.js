@@ -47,17 +47,21 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="meme-wrap">
-        <div className="image-editor">
-          <h1>Working</h1>
-          <MemeDisplay src={this.state.selectedUrl}/>
+      <div className="App-wrap">
+        <div className="navbar">
+            <div className="meme-brand">UMemes the best meme maker ever</div>
         </div>
-        <div className="image-gallery">
-          <MemeSearch queryImages={this.queryImages}/>
-          {!this.state.error ? <MemeImages images={this.state.images} selectImage={this.selectImage}/> : <MemeSadness />}
+        <div className="meme-wrap">
+          <div className="image-editor">
+            
+            <MemeDisplay src={this.state.selectedUrl}/>
+          </div>
+          <div className="image-gallery">
+            <MemeSearch queryImages={this.queryImages}/>
+            {!this.state.error ? <MemeImages images={this.state.images} selectImage={this.selectImage}/> : <MemeSadness />}
+          </div>
         </div>
       </div>
-
     )
   }
 }
