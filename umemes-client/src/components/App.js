@@ -33,7 +33,7 @@ class App extends React.Component {
   async queryImages(query) {
     // GET request using fetch with async/await
     try {
-      const response = await fetch(`http://localhost:8080/search?q=${query}`);
+      const response = await fetch(`/search?q=${query}`);
       const data = await response.json();
       if(data && data.length > 0) {
         this.setState({ images: data, error: false});
