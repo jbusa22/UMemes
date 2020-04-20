@@ -4,8 +4,8 @@
   "description": "michigan meme generator",
   "main": "/umemes-server/server.js",
   "scripts": {
-    "start": "node umemes-server/server.js",
-    "heroku-postbuild": "cd umemes-client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start": "node server",
+    "build": "cd react-ui/ && npm install && npm run build"
   },
   "repository": {
     "type": "git",
