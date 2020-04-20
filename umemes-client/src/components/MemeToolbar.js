@@ -19,7 +19,6 @@ class MemeImage extends React.Component {
             allowTaint: false,
              useCORS: true
         }).then(function(canvas) {
-            document.body.appendChild(canvas);
             var myImage = canvas.toDataURL();
             var link = document.createElement("a");
             link.download = "LookAMeme.png";
@@ -30,11 +29,6 @@ class MemeImage extends React.Component {
         }   catch(err) {
             console.log(err)
         }
-    }
-    downloadURI(uri, name) {
-   
-        //after creating link you should delete dynamic link
-        //clearDynamicLink(link); 
     }
     updateTextTop(e) {
         document.getElementById('meme-text-top').textContent = e.target.value;
