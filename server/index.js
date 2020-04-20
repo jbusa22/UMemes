@@ -2,6 +2,7 @@ var Flickr = require('flickr-sdk');
 var Jimp = require('jimp');
 var express = require('express');
 var app = express();
+var path = require('path');
 require('dotenv').config();
 
 const bodyParser = require('body-parser');
