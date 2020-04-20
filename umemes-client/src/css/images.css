@@ -1,5 +1,5 @@
 .meme-selection, .meme-sadness-box {
-    width: 35rem;
+    width: 100%;
 }
 
 .image-gallery {
@@ -7,6 +7,7 @@
     background-color: #21252b;
     height: 93vh;
     overflow-y: scroll;
+    width: 28%;
 }
 .image-editor {
     flex-grow: 1;
@@ -43,15 +44,13 @@
     flex-direction: column-reverse;
 }
 .meme-chosenImage img{
-    max-width: 50rem;
+    max-width: 52rem;
     margin: 0 auto;
     width: -moz-fit-content;
     width: fit-content;
-    width: -webkit-fill-available;
+    height: fit-content;
     min-width: 40rem;
-    min-height: 40rem;
-    max-height: 50rem;
-
+    max-height: 52rem;
 }
 .text-middle {
     position: absolute;
@@ -61,15 +60,17 @@
     top: 6px;
 }
 .meme-sadness-text {
-    margin-top: 2rem;
+    margin-top: 4rem;
     line-height: 1.5;
+    text-align: center;
+    color: #8e8e8e;
+    font-size: 2rem;
 }
-#meme-text-top, #meme-text-bottom, .meme-sadness-text {
+#meme-text-top, #meme-text-bottom {
     font-family: impact;
     max-width: 40rem;
     margin: .5rem auto;
     overflow-wrap: break-word;
-    min-height: 4rem;
     font-size: 200%;
     text-transform: uppercase;
     text-align: center;
@@ -93,13 +94,7 @@
     right: 2rem;
     bottom: 6px;
 }
-.meme-toolbar {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 6rem;
-}
+
 .meme-desc-top, .meme-desc-bottom, .meme-search{
     background: #fff;
     width: 100%;
@@ -108,17 +103,16 @@
     border-radius: 5px;
     color: grey;
     padding: .75rem 1rem;
-    font-family: monospace;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 33px;
     color: #606060;
     margin-bottom: 2rem;
 }
 .meme-display {
     background: white;
-    padding: 10rem;
+    padding: 7rem;
     width: fit-content;
     margin: 5rem auto;
     box-shadow: 2px 3px 9px 0px #0000003b;

@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import '../css/editor.css';
+
 class MemeImage extends React.Component {
     constructor(props) {
         super(props);
@@ -46,14 +48,18 @@ class MemeImage extends React.Component {
     render() {
         return (
             <div className="meme-toolbar">
-                <div className="toolbar-info">
-                    Where on the image do you want the text?
+                <div className="toolbar-textposition">
+                    <div className="toolbar-textposition-label">
+                        Text Position:
+                    </div>
+                    <div className="toolbar-textposition-select">
+                        <select value={this.state.optionState} onChange={this.moveText}>
+                            <option value="above">Above</option>
+                            <option value="middle">Overlay</option>
+                            <option value="below">Below</option>
+                        </select>
+                    </div>
                 </div>
-                <select value={this.state.optionState} onChange={this.moveText}>
-                    <option value="above">Above</option>
-                    <option value="middle">Overlay</option>
-                    <option value="below">Below</option>
-                </select>
                 <input placeholder="Write a description..." className="meme-desc-top" type="text" onChange={this.updateTextTop}/>
                 {this.state.optionState === "middle" && <input placeholder="Add another line..." className="meme-desc-bottom" type="text" onChange={this.updateTextBottom}/>}
                 

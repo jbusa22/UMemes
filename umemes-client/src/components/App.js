@@ -38,18 +38,18 @@ class App extends React.Component {
       if(data && data.length > 0) {
         this.setState({ images: data, error: false});
       } else {
-        this.setState({error: true, images: [], selectedUrl: "", selectedIndex: null});
+        this.setState({error: true, images: [], selectedIndex: null});
       }
     } catch(err) {
       console.log(err.message);
-      this.setState({ error: true, images: [], selectedUrl: "", selectedIndex: null});
+      this.setState({ error: true, images: [], selectedIndex: null});
     }
   }
   render() {
     return (
       <div className="App-wrap">
         <div className="navbar">
-            <div className="meme-brand">UMemes the best meme maker ever</div>
+            <div className="meme-brand">UMemes</div>
         </div>
         <div className="meme-wrap">
           <div className="image-editor">

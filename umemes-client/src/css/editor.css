@@ -1,0 +1,56 @@
+.meme-toolbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: cornflowerblue;
+    padding: 6rem;
+}
+.toolbar-textposition {
+    color: white;
+    font-size: 2.1rem;
+    display: flex;
+    align-items: center;
+}
+.toolbar-textposition-label {
+margin-right: 2rem;
+}
+
+  /* Custom Select */
+  .toolbar-textposition-select {
+    position: relative;
+    display: flex;
+    width: 17rem;
+    height: 4rem;
+    line-height: 3;
+    background: #2c3e50;
+    overflow: hidden;
+    border-radius: 3px;
+    font-size: 1.4rem;
+  }
+  select {
+    flex: 1 1;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  /* Arrow */
+  .toolbar-textposition-select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1rem;
+    background: #34495e;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .toolbar-textposition-select:hover::after {
+    color: #f39c12;
+  }
+  
