@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import * as html2canvas from 'html2canvas';
 import '../css/editor.css';
 
 class MemeImage extends React.Component {
@@ -10,6 +10,31 @@ class MemeImage extends React.Component {
             optionState: "above"
         };
         this.moveText = this.moveText.bind(this);
+    }
+    printImage() {
+        var div = document.querySelector(".meme-chosenImage");
+        try {
+        html2canvas((div), {
+            letterRendering: 1,
+            allowTaint: false,
+             useCORS: true
+        }).then(function(canvas) {
+            document.body.appendChild(canvas);
+            var myImage = canvas.toDataURL();
+            var link = document.createElement("a");
+            link.download = "LookAMeme.png";
+            link.href = myImage;
+            document.body.appendChild(link);
+            link.click();
+        });
+        }   catch(err) {
+            console.log(err)
+        }
+    }
+    downloadURI(uri, name) {
+   
+        //after creating link you should delete dynamic link
+        //clearDynamicLink(link); 
     }
     updateTextTop(e) {
         document.getElementById('meme-text-top').textContent = e.target.value;
@@ -62,7 +87,9 @@ class MemeImage extends React.Component {
                 </div>
                 <input placeholder="Write a description..." className="meme-desc-top" type="text" onChange={this.updateTextTop}/>
                 {this.state.optionState === "middle" && <input placeholder="Add another line..." className="meme-desc-bottom" type="text" onChange={this.updateTextBottom}/>}
-                
+                <div className="download-image" onClick={this.printImage}>
+                    Download
+                </div>
             </div>
         );
     }

@@ -9,7 +9,7 @@ class MemeDisplay extends React.Component {
                 <div className="meme-center">
                     <div className="meme-chosenImage">
                     <div id="meme-text-top" className="text-above"></div>
-                        <img {...this.props} alt=""/>
+                        <img crossOrigin="anonymous" {...this.props} alt=""/>
                     <div id="meme-text-bottom"></div>
                     </div>
                 </div>

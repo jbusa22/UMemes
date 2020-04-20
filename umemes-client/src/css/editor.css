@@ -6,6 +6,22 @@
     background: cornflowerblue;
     padding: 6rem;
 }
+.download-image {
+    display: inline-block;
+    color: white;
+    background: #2c3e50;
+    border-radius: 3px;
+    padding: 1rem 2rem;
+    box-shadow: 4px 2px 2px #00000024;
+    cursor: pointer;
+    transition: 150ms;
+}
+.download-image:hover {
+  transform: translateY(-.25rem);
+}
+.download-image:active {
+  transform: translateY(.1rem);
+}
 .toolbar-textposition {
     color: white;
     font-size: 2.1rem;
