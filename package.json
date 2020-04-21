@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "build": "cd umemes-client/ && npm install && npm run build",
-    "unpack": "npm install && cd umemes-client/ && npm install && npm run build",
+    "unpack": "cd umemes-client/ && npm install && npm run build",
     "client": "cd umemes-client/ && npm run start",
     "local": "concurrently \"npm run client\" \"npm run start\""
   },
