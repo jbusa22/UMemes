@@ -1,10 +1,10 @@
 # UMemes
 Wolverine Meme Generator
 
-While this code is running at https://umemes.herokuapp.com, you may want to run it on localhost as well so here is how:
+While this code is running at https://umemes.herokuapp.com, you may want to run it on localhost so the instructions for that are below. Note you must have NodeJS installed on your computer first.
 
 ## Installation Instructions
-1. Download the repo and unzip it
+1. Download the repo and unzip it. 
 2. Navigate to the UMemes folder in a terminal or other CLI
 3. Type `npm install`
 4. Type `npm run unpack`
