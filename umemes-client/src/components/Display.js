@@ -1,7 +1,7 @@
 import React from 'react';
-import MemeToolbar from './MemeToolbar.js';
+import Toolbar from './Toolbar.js';
 
-class MemeDisplay extends React.Component {
+class Display extends React.Component {
     render() {
         return (
             <div>
@@ -14,9 +14,9 @@ class MemeDisplay extends React.Component {
                     </div>
                 </div>
             </div>
-            <MemeToolbar/>
+            <Toolbar/>
         </div>
         );
     }
 }
-export default MemeDisplay;
+export default Display;

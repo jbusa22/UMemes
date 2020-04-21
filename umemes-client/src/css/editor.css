@@ -3,9 +3,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: cornflowerblue;
-    padding: 6rem;
-}
+    background: #6495ed;
+    padding: 3rem 6rem;
+  }
 .download-image {
     display: inline-block;
     color: white;
@@ -27,6 +27,7 @@
     font-size: 2.1rem;
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
 }
 .toolbar-textposition-label {
 margin-right: 2rem;

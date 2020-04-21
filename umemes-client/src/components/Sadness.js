@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class MemeImage extends React.Component {
+class Sadness extends React.Component {
     render() {
         return (
             <div className="meme-sadness-box">
@@ -15,4 +15,4 @@ class MemeImage extends React.Component {
         );
     }
 }
-export default MemeImage;
+export default Sadness;

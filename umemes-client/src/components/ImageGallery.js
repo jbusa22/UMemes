@@ -1,11 +1,11 @@
 import React from 'react';
-import MemeImage from './MemeImage';
+import MemeImage from './Image';
 import '../css/flexbin.css';
 import '../css/images.css';
 import {getImageUrl} from '../shared/functions.js';
 
 
-class MemeImages extends React.Component {
+class ImageGallery extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,4 +23,4 @@ class MemeImages extends React.Component {
         );
     }
 }
-export default MemeImages;
+export default ImageGallery;

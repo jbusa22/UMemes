@@ -1,10 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
 
-class MemeSearch extends React.Component {
-    constructor(props) {
-      super(props);
-    }
+class Search extends React.Component {
     render() {
             return (
                 <Formik
@@ -34,5 +31,5 @@ class MemeSearch extends React.Component {
         );
     }
 }
-export default MemeSearch;
+export default Search;
 

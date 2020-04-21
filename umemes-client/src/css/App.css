@@ -16,15 +16,16 @@ body{
   background-color: rgba(0, 0, 0, 0.05);
 }
 .navbar {
-  height: 7vh;
-  padding: 2rem 10rem;
-  background-color: #fff;
-  color: navy;
-  font-size: 24px;
-  box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(to right, #4e3e7d, #6758a7);
+    height: 7vh;
+    padding: 2rem 3rem;
+    background-color: #fff;
+    color: white;
+    box-shadow: 4px 2px 2px rgba(0,0,0,.25);
 }
 .meme-brand {
   font-weight: 700;
+  font-size: 2.1rem;
 }
 
 /* Reset Select */
