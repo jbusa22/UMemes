@@ -4,7 +4,7 @@ import '../css/editor.css';
 import TextPosition from './TextPosition.js';
 import Download from './Download.js';
 
-class MemeImage extends React.Component {
+class Toolbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -59,4 +59,4 @@ class MemeImage extends React.Component {
         );
     }
 }
-export default MemeImage;
+export default Toolbar;

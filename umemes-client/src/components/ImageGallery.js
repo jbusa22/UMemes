@@ -4,7 +4,6 @@ import '../css/flexbin.css';
 import '../css/images.css';
 import {getImageUrl} from '../shared/functions.js';
 
-
 class ImageGallery extends React.Component {
     constructor(props) {
         super(props);
